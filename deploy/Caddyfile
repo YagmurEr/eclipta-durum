@@ -1,0 +1,9 @@
+# durum.eclipta.tr için Caddy ters vekil ayarı.
+# DNS'te durum.eclipta.tr A/AAAA kaydı bu sunucuya yönlendirildikten sonra kullanın.
+durum.eclipta.tr {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:5000
+	log {
+		output file /var/log/caddy/eclipta-durum-access.log
+	}
+}
